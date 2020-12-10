@@ -1,0 +1,97 @@
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'weather/css/weekly.css' %}">
+</head>
+<body>
+  <div class="container">
+    <div class="container-1">
+        <div class="one">
+          <h2>{{ current_weather.city }}</h2>
+        </div>
+
+        <div class="two">
+          <div class="box-1">
+            <img src="http://openweathermap.org/img/w/{{current_weather.icon}}.png">
+          </div>
+
+          <div class="box-2">
+            {{ current_weather.temperature }}&#x2103;
+          </div>
+
+          <div class="box-3">
+            <div class="box">
+              {{ current_weather.max_temperature }}&#x2103;
+            </div>
+            <div class="box">
+            {{ current_weather.max_temperature }}&#x2103;
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="container-2">
+        <div class="one">
+            <div class="box-1"><a href="{% url 'weather_home' %}"> Today</a></div>
+            <div class="box-2"><a href="{% url 'weather_weekly' %}"> Weekly</a></div>
+        </div>
+
+        <div class="two">
+          <div class="mon">
+            <div class="b-1">Mon</div>
+            <div class="b-2"><img src="/media/sun.png"></div>
+            <div class="b-3">
+              <div class="box">54&#x2109;</div>
+              <div class="box">23&#x2109;</div>
+            </div>
+          </div>
+
+          <div class="tue">
+            <div class="b-1">Tue</div>
+            <div class="b-2"><img src="/media/wave.png"></div>
+            <div class="b-3">
+              <div class="box">36&#x2109;</div>
+              <div class="box">25&#x2109;</div>
+            </div>
+          </div>
+
+          <div class="wed">
+              <div class="b-1">Wed</div>
+              <div class="b-2"><img src="/media/suncloud.png"></div>
+              <div class="b-3">
+                <div class="box">46&#x2109;</div>
+                <div class="box">23&#x2109;</div>
+              </div>
+          </div>
+
+          <div class="thu">
+              <div class="b-1">Thu</div>
+              <div class="b-2"><img src="/media/sun.png"></div>
+              <div class="b-3">
+                <div class="box">52&#x2109;</div>
+                <div class="box">26&#x2109;</div>
+              </div>
+          </div>
+
+          <div class="fri">
+              <div class="b-1">Fri</div>
+              <div class="b-2"><img src="/media/sun.png"></div>
+              <div class="b-3">
+                <div class="box">39&#x2109;</div>
+                <div class="box">28&#x2109;</div>
+              </div>
+          </div>
+
+          <div class="sat">
+              <div class="b-1">Sat</div>
+              <div class="b-2"><img src="/media/suncloud.png"></div>
+              <div class="b-3">
+                <div class="box">49&#x2109;</div>
+                <div class="box">30&#x2109;</div>
+              </div>
+          </div>
+
+        </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<weatherdata>
+    <location>
+        <name>Kathmandu</name>
+        <type/>
+        <country>NP</country>
+        <timezone>20700</timezone>
+        <location altitude="0" latitude="27.7088" longitude="85.3202" geobase="geonames" geobaseid="1283240"/>
+    </location>
+    <credit/>
+    <meta>
+        <lastupdate/>
+        <calctime>0</calctime>
+        <nextupdate/>
+    </meta>
+    <sun rise="2019-11-26T00:48:03" set="2019-11-26T11:23:59"/>
+    <forecast>
+        <time from="2019-11-26T03:00:00" to="2019-11-26T06:00:00">
+            <symbol number="800" name="clear sky" var="01d"/>
+            <precipitation/>
+            <windDirection deg="189" code="S" name="South"/>
+            <windSpeed mps="2.35" unit="m/s" name="Light breeze"/>
+            <temperature unit="kelvin" value="295.86" min="293.08" max="295.86"/>
+            <pressure unit="hPa" value="1018"/>
+            <humidity value="52" unit="%"/>
+            <clouds value="clear sky" all="0" unit="%"/>
+        </time>
+        <time from="2019-11-26T06:00:00" to="2019-11-26T09:00:00">
+            <symbol number="800" name="clear sky" var="01d"/>
+            <precipitation/>
+            <windDirection deg="199" code="SSW" name="South-southwest"/>
+            <windSpeed mps="2.48" unit="m/s" name="Light breeze"/>
+            <temperature unit="kelvin" value="294.55" min="292.47" max="294.55"/>
+            <pressure unit="hPa" value="1015"/>
+            <humidity value="57" unit="%"/>
+            <clouds value="clear sky" all="0" unit="%"/>
+        </time>
+        <time from="2019-11-26T09:00:00" to="2019-11-26T12:00:00">
+            <symbol number="800" name="clear sky" var="01n"/>
+            <precipitation/>
+            <windDirection deg="316" code="NW" name="Northwest"/>
+            <windSpeed mps="0.62" unit="m/s" name="Calm"/>
+            <temperature unit="kelvin" value="286.75" min="285.36" max="286.75"/>
+            <pressure unit="hPa" value="1016"/>
+            <humidity value="89" unit="%"/>
+            <clouds value="clear sky" all="0" unit="%"/>
+        </time>
+        <time from="2019-11-26T12:00:00" to="2019-11-26T15:00:00">
+            <symbol number="800" name="clear sky" var="01n"/>
+            <precipitation/>
+            <windDirection deg="351" code="N" name="North"/>
+            <windSpeed mps="1.3" unit="m/s" name="Calm"/>
+            <temperature unit="kelvin" value="285.97" min="285.28" max="285.97"/>
+            <pressure unit="hPa" value="1019"/>
+            <humidity value="83" unit="%"/>
+            <clouds value="clear sky" all="0" unit="%"/>
+        </time>
+    </forecast>
+</weatherdata>

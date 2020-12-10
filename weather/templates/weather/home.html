@@ -1,0 +1,163 @@
+{% load static %}
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1,
+    shrink-to-fit=no">
+  <link rel="stylesheet" href="{% static 'weather/css/main.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class="container-1">
+      <div class="search">
+          <form method ="POST">
+            {% csrf_token %}
+            <input type="text" onkeyup="updateUrl()" class="current-city" value="{{ city }}" name="city" placeholder="City">
+            <button type="submit"  onclick="clear()" class="weather-search button is-info">
+                Search
+            </button>
+          </form>
+          <div class="message">
+              {% if messages %}
+                {% for message in messages %}
+                  <small>{{ message }}</small>
+                {% endfor %}
+              {% endif %}
+
+          </div>
+      </div>
+      <div class="one">
+        <h2>{{current_weather.city }}</h2>
+      </div>
+
+      <div class="two">
+        <div class="box-1">
+          <img src="http://openweathermap.org/img/w/{{current_weather.icon}}.png">
+        </div>
+
+        <div class="box-2">
+          {{ current_weather.temperature }}&#x2103;
+        </div>
+
+        <div class="box-3">
+          <div class="box">
+            {{ current_weather.max_temperature }}&#x2103;
+          </div>
+        <div class="box">
+        {{ current_weather.min_temperature }}&#x2103;
+        </div>
+      </div>
+
+    </div>
+
+    </div>
+
+    <div class="container-mid">
+      <div class="mid-1">
+        <div class="box-1">Humidity</div>
+        <div class="box-2"><img src='{% static "weather/images/drop.png" %}'></div>
+        <div class="box-3">{{ current_weather.humidity }}%</div>
+      </div>
+      <div class="mid-2">
+        <div class="box-1">Rain</div>
+        <div class="box-2"><img src='{% static "weather/images/umbrella.png" %}'></div>
+        <div class="box-3">0%</div>
+      </div>
+      <div class="mid-3">
+        <div class="box-1">Wind</div>
+        <div class="box-2"><img src='{% static "weather/images/wind.png" %}'></div>
+        <div class="box-3">{{ current_weather.wind }}m/s</div>
+      </div>
+    </div>
+
+    <div class="container-2">
+      <div class="one">
+          <div class="box-1"><a href="{% url 'weather_home' %}"> Today</a></div>
+          <div class="box-2"><a class="weekly" href= "{% url 'weather_weekly' %}">Weekly</a></div>
+      </div>
+
+      <div class="two">
+        <div class="b-1">
+          <div class="box-1">
+            NOW
+          </div>
+          <div class="box-2">
+            <img src="http://openweathermap.org/img/w/{{current_weather.icon}}.png">
+          </div>
+          <div class="box-3">
+            {{ current_weather.temperature }}&#x2103;
+          </div>
+
+        </div>
+
+        <div class="b-2">
+          <div class="box-1">
+            12AM
+          </div>
+          <div class="box-2">
+            <img src="http://openweathermap.org/img/w/{{hourly_weather.icon_1}}.png">
+          </div>
+          <div class="box-3">
+            {{ hourly_weather.temperature_1 }}&#x2103;
+          </div>
+        </div>
+
+        <div class="b-3">
+          <div class="box-1">
+            3PM
+          </div>
+          <div class="box-2">
+            <img src="http://openweathermap.org/img/w/{{hourly_weather.icon_2}}.png">
+          </div>
+          <div class="box-3">
+            {{ hourly_weather.temperature_3 }}&#x2103;
+          </div>
+        </div>
+
+        <div class="b-4">
+          <div class="box-1">
+             6PM
+          </div>
+          <div class="box-2">
+            <img src="http://openweathermap.org/img/w/{{hourly_weather.icon_3}}.png">
+          </div>
+          <div class="box-3">
+            {{hourly_weather.temperature_3}}&#x2103;
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+    <script>
+        function getElement(className){
+            return document.querySelector(className)
+        }
+        function getValueOfElement(element){
+            return element.value;
+        }
+
+        function updateUrlWithValue(anchorElement, value){
+            anchorElement.href ="/weekly?city="  + value;
+        }
+        function updateUrl() {
+          const currentCityElement =  getElement('.current-city');
+          const weeklyAnchorElement = getElement('.weekly');
+          const currentCity = getValueOfElement(currentCityElement);
+          updateUrlWithValue(weeklyAnchorElement, currentCity)
+            window.city = currentCityElement
+            window.weeklt = weeklyElement
+
+
+        }
+        updateUrl()
+            function clear() {
+                document.getElementsByClassName("current-city").clear();
+            }
+    </script>
+</body>
+
+</html>
